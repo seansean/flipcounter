@@ -19,7 +19,7 @@ FlipCounter = (function() {
             }
             var dataVal     = (ch == '_' ? '' : ch);
             var strVal      = (ch == '_' ? '&nbsp;' : ch);
-            result += '\t<span class="flipcount__num" data-flipcount-no="'+ dataVal +'">' + strVal + '</span>\n';
+            result += '\t<span class="flipcount__num" data-flipcount-val="'+ dataVal +'">' + strVal + '</span>\n';
         }
         result += '</div>';
         return result;
