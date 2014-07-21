@@ -4,7 +4,7 @@ FlipCounter = (function() {
 
     // Generates counter output
     flipCounter.build = function(s, min) {
-        s = parseInt(s);
+        s = parseInt(s, 10);
         s = s.toString();
         s = s.length < min ? pad(s, '0', min) : s;
         s = addCommas(s);
