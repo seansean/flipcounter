@@ -31,7 +31,7 @@ FlipCounter = (function() {
       return str.length < max ? pad(fill + str, max) : str;
     };
 
-    // Add comma formatting to numbers 
+    // Add comma formatting to numbers (http://stackoverflow.com/a/2901298)
     var addCommas = function(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
