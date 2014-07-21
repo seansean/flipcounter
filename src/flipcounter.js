@@ -4,7 +4,7 @@ FlipCounter = (function() {
 
     // Generates counter output
     flipCounter.build = function(s, min) {
-        var result = '';
+        var result = '<div class="flipcount" data-flipcount-total="'+ s.length +'">\n';
         s = s.length < min ? pad(s, '_', min) : s;
         s = addCommas(s);
         for (var i = 0; i < s.length; ++i) {
@@ -19,9 +19,9 @@ FlipCounter = (function() {
             }
             var dataVal     = (ch == '_' ? '' : ch);
             var strVal      = (ch == '_' ? '&nbsp;' : ch);
-            result += '<span class="ecount__num" data-ecount="'+ dataVal +'">' + strVal + '</span>';
+            result += '\t<span class="flipcount__num" data-flipcount-no="'+ dataVal +'">' + strVal + '</span>\n';
         }
-        
+        result += '</div>';
         return result;
     };
 
@@ -31,7 +31,7 @@ FlipCounter = (function() {
       return str.length < max ? pad(fill + str, max) : str;
     };
 
-    // Add comma formatting to numbers (http://stackoverflow.com/a/2901298)
+    // Add comma formatting to numbers 
     var addCommas = function(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
